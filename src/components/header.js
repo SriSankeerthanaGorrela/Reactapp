@@ -3,10 +3,9 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
 
@@ -59,9 +58,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1,width:'100%'}}>
-      <AppBar position="static" sx={{backgroundColor:'red'}}>
+      <AppBar position="fixed" sx={{backgroundColor:'red',height:55}}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -69,12 +68,12 @@ export default function SearchAppBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block',color:'white',fontWeight:600 } }}
+            sx={{ flexGrow: 1,paddingLeft:65 ,display: { xs: 'none', sm: 'block',color:'white',fontWeight:700,fontSize:'23px'} }}
           >
          NETFLIX
           </Typography>
