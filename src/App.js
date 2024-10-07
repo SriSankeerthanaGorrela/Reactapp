@@ -1,7 +1,27 @@
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 import SearchAppBar from './components/header.js';
 import SidebarWithButton from './components/sidebar.js';
+import MovieGrid from './components/MovieGrid.js';
+
+
+
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <SearchAppBar/>
+//         <SidebarWithButton/>
+//         <MovieGrid/>
+//         <MovieCard/> 
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import React, { useState } from "react";
 import {
   CssBaseline,
@@ -11,17 +31,16 @@ import {
   Toolbar,
 } from "@mui/material";
 
-import MovieGrid from "./components/MovieGrid";
-
 
 const theme = createTheme({
   palette: {
-    background: {
-      default: 'black', // Set the background color here
+    background:{
+      default:'black',
     },
     primary: {
       main: "#2196f3",
     },
+
   },
 });
 
@@ -35,10 +54,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ display: "flex" ,flexDirection:'column',width:'100%'}}>
+      <Box sx={{ display: "flex",flexDirection:"column",width:"100%" }}>
         <SearchAppBar handleDrawerToggle={handleDrawerToggle} />
-        <Box sx={{ display: "flex", flexGrow: 1 }}>
-
         <SidebarWithButton
           mobileOpen={mobileOpen}
           handleDrawerToggle={handleDrawerToggle}
@@ -46,7 +63,6 @@ function App() {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar /> {/* This empty Toolbar acts as a spacer */}
           <MovieGrid />
-        </Box>
         </Box>
       </Box>
     </ThemeProvider>

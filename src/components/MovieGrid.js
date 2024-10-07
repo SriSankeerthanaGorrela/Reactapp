@@ -11,7 +11,7 @@ function MovieGrid() {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const data = await getPopularMovies();
+        const data = await getPopularMovies();//
         setMovies(data.results);
         setLoading(false);
       } catch (err) {
@@ -21,7 +21,7 @@ function MovieGrid() {
     };
 
     fetchMovies();
-  }, []);
+  }, []);//It means the effect will only run once, after the initial render 
 
   if (loading) {
     return <CircularProgress />;
